@@ -1,97 +1,130 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [mY Github](https://github.com/M-ower/CMPS460.Ghaith).
 
 # Getting Started
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.(DONE)
 
-## Step 1: Start Metro
+Module 3 - Event Registration App
+Description
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+For Module 3, I built an Event Registration application using React Native. The app lets the user enter their name, choose how many guests they want to bring, and register for the Mobile Development Workshop.
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+I used React Native components, props, state, TextInput, buttons, conditional rendering, and styling for this project.
 
-```sh
-# Using npm
+What the App Does
+Lets the user enter their name
+Shows the event name and type
+Lets the user add a guest
+Lets the user remove a guest
+Keeps the guest number from going below 1
+Lets the user register
+Shows a registration confirmation after registering
+Shows the user's name, event, and number of guests
+Components
+
+I used two functional components in the application.
+
+App
+
+The App component is the main part of the application. It contains the registration form, guest buttons, register button, and the registration information.
+
+EventInfo
+
+The EventInfo component is used to show the event information. I used props to pass the event name and event type into this component.
+
+<EventInfo
+  name="Mobile Development Workshop"
+  type="React Native Event"
+/>
+
+The name and type values are the props being passed to the component.
+
+State
+
+I used useState to keep track of information that changes in the app.
+
+I have three pieces of state:
+
+name keeps track of the name entered by the user.
+guests keeps track of the number of guests.
+registered keeps track of whether the user registered.
+const [name, setName] = useState('');
+const [guests, setGuests] = useState(1);
+const [registered, setRegistered] = useState(false);
+TextInput
+
+I used a TextInput so the user can enter their name.
+
+<TextInput
+  placeholder="Enter your name"
+  value={name}
+  onChangeText={setName}
+/>
+Buttons
+
+The app has three buttons.
+
+- Guest removes a guest.
++ Guest adds a guest.
+Register registers the user.
+
+The guest count starts at 1 and cannot go below 1.
+
+Conditional Rendering
+
+I used conditional rendering to show the registration message.
+
+The Registration Complete! message does not show when the app first opens. It appears after the user enters their name and presses the Register button.
+
+{registered && (
+  <View>
+    <Text>Registration Complete!</Text>
+  </View>
+)}
+Styling
+
+I used StyleSheet from React Native to style the application. I added styling for the title, event information, text input, buttons, and registration confirmation.
+
+How to Run the App
+Step 1: Start Metro
+
+Metro is the JavaScript build tool used by React Native.
+
+From the root of the project, I can start Metro with:
+
 npm start
+Step 2: Build and Run the Android App
 
-# OR using Yarn
-yarn start
-```
-
-## Step 2: Build and run your app
-
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
+After Metro is running, open another terminal in the project folder and run:
 npm run android
 
-# OR using Yarn
-yarn android
-```
+I also used this command to build and run my application:
 
-### iOS
+npx react-native run-android
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+The application was tested using the Android Emulator with my Pixel 10 virtual device.
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+Step 3: Make Changes
 
-```sh
-bundle install
-```
+The main file for the application is App.tsx.
 
-Then, and every time you update your native dependencies, run:
+When changes are made and saved, React Native can update the application using Fast Refresh. This makes it easier to see changes without having to completely restart the application every time.
 
-```sh
-bundle exec pod install
-```
+Testing
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+I tested the application on the Android Emulator.
 
-```sh
-# Using npm
-npm run ios
+I tested the following:
 
-# OR using Yarn
-yarn ios
-```
+Entering my name
+Adding guests
+Removing guests
+Making sure the guest count does not go below 1
+Registering for the event
+Checking that the registration confirmation appears
+Checking that the name, event, and guest number are displayed correctly
+What I Learned
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+In this module, I learned more about how React Native applications use components, props, and state. I also practiced using useState, TextInput, buttons, conditional rendering, and React Native styling.
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+The EventInfo component helped me understand how props can be used to pass information from one component to another. The state allowed the application to respond to the user's actions and update the screen.
