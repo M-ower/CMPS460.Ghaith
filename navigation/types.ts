@@ -8,4 +8,5 @@ export type RootStackParamList = {
     description: string;
   };
   About: undefined;
+  Garage: undefined;
 };

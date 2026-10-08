@@ -6,13 +6,14 @@ import HomeScreen from './screens/HomeScreen';
 import CarsScreen from './screens/CarsScreen';
 import CarDetailsScreen from './screens/CarDetailsScreen';
 import AboutScreen from './screens/AboutScreen';
+import GarageScreen from './screens/GarageScreen';
 import type {RootStackParamList} from './navigation/types';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function App() {
   
-  return (
+return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
@@ -37,6 +38,12 @@ function App() {
           name="About"
           component={AboutScreen}
           options={{title: 'About'}}
+        />
+
+        <Stack.Screen
+          name="Garage"
+          component={GarageScreen}
+          options={{title: 'My Garage'}}
         />
       </Stack.Navigator>
     </NavigationContainer>

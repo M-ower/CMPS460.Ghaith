@@ -22,6 +22,12 @@ function HomeScreen({navigation}: Props) {
 
       <Pressable
         style={styles.button}
+        onPress={() => navigation.navigate('Garage')}>
+        <Text style={styles.buttonText}>My Garage</Text>
+      </Pressable>
+
+      <Pressable
+        style={styles.button}
         onPress={() => navigation.navigate('About')}>
         <Text style={styles.buttonText}>About</Text>
       </Pressable>
