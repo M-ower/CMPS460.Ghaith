@@ -7,13 +7,13 @@ import CarsScreen from './screens/CarsScreen';
 import CarDetailsScreen from './screens/CarDetailsScreen';
 import AboutScreen from './screens/AboutScreen';
 import GarageScreen from './screens/GarageScreen';
+import ApiPostsScreen from './screens/ApiPostsScreen';
 import type {RootStackParamList} from './navigation/types';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function App() {
-  
-return (
+  return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
@@ -44,6 +44,12 @@ return (
           name="Garage"
           component={GarageScreen}
           options={{title: 'My Garage'}}
+        />
+
+        <Stack.Screen
+          name="ApiPosts"
+          component={ApiPostsScreen}
+          options={{title: 'API Data Viewer'}}
         />
       </Stack.Navigator>
     </NavigationContainer>

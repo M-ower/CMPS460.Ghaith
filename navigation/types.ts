@@ -9,4 +9,5 @@ export type RootStackParamList = {
   };
   About: undefined;
   Garage: undefined;
+  ApiPosts: undefined;
 };

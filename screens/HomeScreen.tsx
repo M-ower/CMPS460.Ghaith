@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {StyleSheet, Text, View, Pressable} from 'react-native';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
@@ -24,6 +25,12 @@ function HomeScreen({navigation}: Props) {
         style={styles.button}
         onPress={() => navigation.navigate('Garage')}>
         <Text style={styles.buttonText}>My Garage</Text>
+      </Pressable>
+
+      <Pressable
+        style={styles.button}
+        onPress={() => navigation.navigate('ApiPosts')}>
+        <Text style={styles.buttonText}>API Data Viewer</Text>
       </Pressable>
 
       <Pressable
