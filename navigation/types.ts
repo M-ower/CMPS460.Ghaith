@@ -10,4 +10,6 @@ export type RootStackParamList = {
   About: undefined;
   Garage: undefined;
   ApiPosts: undefined;
+  CarCareOrganizer: undefined;
+  TaskManager: undefined;
 };

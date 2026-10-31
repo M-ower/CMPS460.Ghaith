@@ -20,11 +20,21 @@ function HomeScreen({navigation}: Props) {
         onPress={() => navigation.navigate('Cars')}>
         <Text style={styles.buttonText}>View Cars</Text>
       </Pressable>
-
+      <Pressable
+        style={styles.button}
+        onPress={() => navigation.navigate('TaskManager')}>
+        <Text style={styles.buttonText}>Persistent Task Manager</Text>
+      </Pressable>
       <Pressable
         style={styles.button}
         onPress={() => navigation.navigate('Garage')}>
         <Text style={styles.buttonText}>My Garage</Text>
+      </Pressable>
+
+      <Pressable
+        style={styles.button}
+        onPress={() => navigation.navigate('CarCareOrganizer')}>
+        <Text style={styles.buttonText}>Car Care Organizer</Text>
       </Pressable>
 
       <Pressable
