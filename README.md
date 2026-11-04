@@ -1,8 +1,14 @@
-# CMPS460 Module 6: Working with APIs and External Data
+# CMPS460 React Native Projects
 
 ## Project Overview
 
-This project is a React Native application built with TypeScript. The API Data Viewer screen retrieves posts from an external REST API and displays them in a list. It demonstrates how a mobile application can request remote data and handle loading and network errors.
+This project is a React Native application built with TypeScript. It includes features developed throughout the course, including an API Data Viewer and a Personal Mobile Organizer.
+
+The application demonstrates mobile navigation, working with external APIs, managing tasks, local data storage, and handling loading and error states.
+
+---
+
+# Module 6: Working with APIs and External Data
 
 ## API Information
 
@@ -15,7 +21,7 @@ Each post includes a user ID, post ID, title, and body. This public sample API i
 
 ## Implementation
 
-The screen uses `fetch()` with `async/await` to request data. It checks the HTTP response, stores the results in React state, and uses a TypeScript interface to describe each post.
+The API Data Viewer screen uses `fetch()` with `async/await` to request data. It checks the HTTP response, stores the results in React state, and uses a TypeScript interface to describe each post.
 
 The post list uses React Native's `FlatList` and a unique post ID as its key. The screen includes a loading indicator, an error message, an empty state, a Retry button, and pull-to-refresh functionality.
 
@@ -29,15 +35,20 @@ The post list uses React Native's `FlatList` and a unique post ID as its key. Th
 ## How to Run
 
 1. Open a terminal in the project directory.
-2. Install dependencies if needed by running `npm install`.
+2. Install dependencies if needed:
+
+   ```powershell
+   npm install
+   ```
+
 3. Start the Android emulator.
-4. Run the application with:
+4. Run the application:
 
    ```powershell
    npm run android
    ```
 
-The project uses React Native CLI, not Expo, so use the command above to launch it.
+The project uses React Native CLI, not Expo.
 
 ## Testing
 
@@ -54,15 +65,4 @@ Include screenshots of the successful API list and the error screen with the Ret
 
 ## Network Troubleshooting
 
-During development, the Android emulator could reach an internet IP address but could not resolve the API hostname. Restarting the Pixel_8 emulator with explicit DNS servers resolved the issue:
-
-```powershell
-adb emu kill
-& "C:\2AndroidSDK\emulator\emulator.exe" -avd Pixel_8 -dns-server 8.8.8.8,8.8.4.4
-```
-
-After the emulator starts, run `npm run android` again if needed.
-
-## Design Decisions
-
-JSONPlaceholder provides sample data without requiring an API key. Remote retrieval demonstrates how an app can access shared data. Loading, error, retry, and refresh behavior help the user understand the current request state and recover when a request fails.
+During development, the Android emulator could
