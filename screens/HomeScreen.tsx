@@ -1,10 +1,17 @@
-
-import React from 'react';
+﻿import React from 'react';
 import {StyleSheet, Text, View, Pressable} from 'react-native';
+import type {CompositeScreenProps} from '@react-navigation/native';
+import type {BottomTabScreenProps} from '@react-navigation/bottom-tabs';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
-import type {RootStackParamList} from '../navigation/types';
+import type {
+  MainTabParamList,
+  RootStackParamList,
+} from '../navigation/types';
 
-type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
+type Props = CompositeScreenProps<
+  BottomTabScreenProps<MainTabParamList, 'Home'>,
+  NativeStackScreenProps<RootStackParamList>
+>;
 
 function HomeScreen({navigation}: Props) {
   return (
@@ -17,14 +24,28 @@ function HomeScreen({navigation}: Props) {
 
       <Pressable
         style={styles.button}
+        onPress={() => navigation.navigate('Tasks')}>
+        <Text style={styles.buttonText}>Module 8 Tasks</Text>
+      </Pressable>
+
+      <Pressable
+        style={styles.button}
+        onPress={() => navigation.navigate('Settings')}>
+        <Text style={styles.buttonText}>Settings</Text>
+      </Pressable>
+
+      <Pressable
+        style={styles.button}
         onPress={() => navigation.navigate('Cars')}>
         <Text style={styles.buttonText}>View Cars</Text>
       </Pressable>
+
       <Pressable
         style={styles.button}
         onPress={() => navigation.navigate('TaskManager')}>
         <Text style={styles.buttonText}>Persistent Task Manager</Text>
       </Pressable>
+
       <Pressable
         style={styles.button}
         onPress={() => navigation.navigate('Garage')}>
@@ -59,19 +80,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 20,
   },
-
   title: {
     fontSize: 32,
     fontWeight: 'bold',
     marginBottom: 15,
   },
-
   subtitle: {
     fontSize: 18,
     textAlign: 'center',
     marginBottom: 30,
   },
-
   button: {
     width: '80%',
     padding: 15,
@@ -80,7 +98,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#333',
   },
-
   buttonText: {
     color: '#fff',
     fontSize: 18,
