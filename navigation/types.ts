@@ -1,4 +1,5 @@
-﻿export type MainTabParamList = {
+﻿
+export type MainTabParamList = {
   Home: undefined;
   Tasks: undefined;
   Settings: undefined;
@@ -21,4 +22,11 @@ export type RootStackParamList = {
   ApiPosts: undefined;
   CarCareOrganizer: undefined;
   TaskManager: undefined;
+
+  // Module 9: NFL Teams and Players
+  NFLTeams: undefined;
+  NFLTeamDetails: {
+    teamId: string;
+  };
+  NFLFavorites: undefined;
 };

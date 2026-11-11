@@ -1,4 +1,5 @@
-﻿import React from 'react';
+﻿
+import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -22,6 +23,11 @@ import GarageScreen from './screens/GarageScreen';
 import CarCareOrganizerScreen from './screens/CarCareOrganizerScreen';
 import ApiPostsScreen from './screens/ApiPostsScreen';
 import TaskManagerScreen from './screens/TaskManagerScreen';
+
+// Module 9: NFL Teams and Players
+import NFLTeamsScreen from './screens/NFLTeamsScreen';
+import NFLTeamDetailsScreen from './screens/NFLTeamDetailsScreen';
+import NFLFavoritesScreen from './screens/NFLFavoritesScreen';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 const Tab = createBottomTabNavigator<MainTabParamList>();
@@ -105,6 +111,25 @@ function App() {
             name="TaskManager"
             component={TaskManagerScreen}
             options={{title: 'Persistent Task Manager'}}
+          />
+
+          {/* Module 9: NFL Screens */}
+          <Stack.Screen
+            name="NFLTeams"
+            component={NFLTeamsScreen}
+            options={{title: 'NFL Teams'}}
+          />
+
+          <Stack.Screen
+            name="NFLTeamDetails"
+            component={NFLTeamDetailsScreen}
+            options={{title: 'Team Details'}}
+          />
+
+          <Stack.Screen
+            name="NFLFavorites"
+            component={NFLFavoritesScreen}
+            options={{title: 'Favorite Teams'}}
           />
         </Stack.Navigator>
       </NavigationContainer>

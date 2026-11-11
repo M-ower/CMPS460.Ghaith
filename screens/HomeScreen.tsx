@@ -1,4 +1,5 @@
-﻿import React from 'react';
+﻿
+import React from 'react';
 import {StyleSheet, Text, View, Pressable} from 'react-native';
 import type {CompositeScreenProps} from '@react-navigation/native';
 import type {BottomTabScreenProps} from '@react-navigation/bottom-tabs';
@@ -62,6 +63,13 @@ function HomeScreen({navigation}: Props) {
         style={styles.button}
         onPress={() => navigation.navigate('ApiPosts')}>
         <Text style={styles.buttonText}>API Data Viewer</Text>
+      </Pressable>
+
+      {/* Module 9: NFL App */}
+      <Pressable
+        style={styles.button}
+        onPress={() => navigation.navigate('NFLTeams')}>
+        <Text style={styles.buttonText}>NFL Teams & Players</Text>
       </Pressable>
 
       <Pressable
